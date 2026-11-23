@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Код &amp; Дизайн — онлайн-школа цифровых профессий</title>
+  <meta name="description" content="Курс «Веб-разработка и создание сайтов с нуля до первых заказов». 3 месяца практики, 5 проектов в портфолио, наставники и помощь с первым заказом.">
+  <meta name="theme-color" content="#0B0D14">
+  <meta property="og:title" content="Код &amp; Дизайн — веб-разработка с нуля до первых заказов">
+  <meta property="og:description" content="Освойте веб-разработку за 3 месяца: 5 проектов в портфолио, живые разборы и поддержка наставников.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%236366F1'/%3E%3Cstop offset='1' stop-color='%238B5CF6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Cpath d='M26 22 18 32l8 10M38 22l8 10-8 10M35 18l-6 28' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('kd-theme');
+        document.documentElement.setAttribute('data-theme', saved === 'light' ? 'light' : 'dark');
+      } catch (e) { /* localStorage недоступен — остаёмся на тёмной теме */ }
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <div class="bg" aria-hidden="true">
+    <span class="bg__grid"></span>
+    <span class="bg__orb bg__orb--1"></span>
+    <span class="bg__orb bg__orb--2"></span>
+    <span class="bg__orb bg__orb--3"></span>
+  </div>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a class="logo" href="#top" aria-label="Код и Дизайн — на главную">
+        <span class="logo__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8.5 8 4.5 12l4 4"></path>
+            <path d="m15.5 8 4 4-4 4"></path>
+            <path d="M13.5 6.5l-3 11"></path>
+          </svg>
+        </span>
+        <span class="logo__text">
+          <span class="logo__name">Код <span class="logo__amp">&amp;</span> Дизайн</span>
+          <span class="logo__tag">школа цифровых профессий</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#about">О курсе</a>
+        <a href="#program">Программа</a>
+        <a href="#pricing">Тарифы</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Включить светлую тему">
+          <span class="theme-toggle__icon theme-toggle__sun" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+              <circle cx="12" cy="12" r="4.2"></circle>
+              <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"></path>
+            </svg>
+          </span>
+          <span class="theme-toggle__icon theme-toggle__moon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.5 13.6A8.6 8.6 0 0 1 10.4 3.5 8.7 8.7 0 1 0 20.5 13.6Z"></path>
+            </svg>
+          </span>
+        </button>
+
+        <button class="btn btn--primary btn--sm header__cta" type="button" data-open-modal="free">
+          Бесплатный урок
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </button>
+
+        <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Открыть меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <div class="mobile-nav__backdrop" data-close-menu></div>
+    <aside class="mobile-nav__panel">
+      <p class="mobile-nav__label">Навигация</p>
+      <nav class="mobile-nav__links" id="mobileNavLinks" aria-label="Мобильная навигация">
+        <a href="#about">О курсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+        <a href="#program">Программа <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+        <a href="#pricing">Тарифы <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+        <a href="#reviews">Отзывы <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+        <a href="#faq">FAQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </nav>
+      <div class="mobile-nav__foot">
+        <button class="btn btn--primary btn--block" type="button" data-open-modal="free">Записаться на бесплатный урок</button>
+        <a class="mobile-nav__contact" href="https://t.me/koddesign_school" target="_blank" rel="noopener">Telegram: @koddesign_school</a>
+        <a class="mobile-nav__contact" href="tel:+79991234567">+7 (999) 123-45-67</a>
+      </div>
+    </aside>
+  </div>
+
+  <main id="main">
+<section class="hero" id="top">
+      <div class="container">
+        <div class="hero__grid">
+          <div class="hero__content">
+            <div class="badge reveal">
+              <span class="badge__dot" aria-hidden="true"></span>
+              Старт нового потока <span class="badge__sep" aria-hidden="true">·</span> Осталось <strong>7 мест</strong>
+            </div>
+
+            <h1 class="reveal" data-delay="1">Освойте веб-разработку <span class="text-gradient">с нуля</span> и начните зарабатывать на создании сайтов</h1>
+
+            <p class="hero__lead reveal" data-delay="2">3 месяца практики, 5 готовых проектов в портфолио и поддержка наставников. Без скучной теории — только реальные навыки, которые приносят первые деньги.</p>
+
+            <div class="hero__actions reveal" data-delay="3">
+              <a class="btn btn--primary btn--lg" href="#pricing">
+                Выбрать тариф
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+              </a>
+              <button class="btn btn--ghost btn--lg" type="button" data-open-modal="free">
+                <span class="btn__play" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M8.5 6.3a1 1 0 0 1 1.5-.87l8 5.7a1 1 0 0 1 0 1.74l-8 5.7a1 1 0 0 1-1.5-.87V6.3Z"></path></svg>
+                </span>
+                Попробовать бесплатно
+              </button>
+            </div>
+
+            <div class="countdown reveal" data-delay="4">
+              <p class="countdown__label">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.4 2"></path></svg>
+                До закрытия набора в поток:
+              </p>
+              <div class="countdown__grid" id="countdown">
+                <div class="countdown__box"><span class="countdown__value" id="cdDays">03</span><span class="countdown__unit">дней</span></div>
+                <div class="countdown__box"><span class="countdown__value" id="cdHours">00</span><span class="countdown__unit">часов</span></div>
+                <div class="countdown__box"><span class="countdown__value" id="cdMinutes">00</span><span class="countdown__unit">минут</span></div>
+                <div class="countdown__box"><span class="countdown__value" id="cdSeconds">00</span><span class="countdown__unit">секунд</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__visual reveal" data-delay="2">
+            <div class="code-window" aria-hidden="true">
+              <div class="code-window__bar">
+                <span class="code-window__dots"><i></i><i></i><i></i></span>
+                <span class="code-window__file">index.html</span>
+                <span class="code-window__live"><i></i>live</span>
+              </div>
+              <div class="code-window__body">
+<pre><code><span class="c-comment">&lt;!-- Мой первый проект --&gt;</span>
+<span class="c-tag">&lt;section</span> <span class="c-attr">class</span>=<span class="c-str">"hero"</span><span class="c-tag">&gt;</span>
+  <span class="c-tag">&lt;h1&gt;</span>Привет, мир!<span class="c-tag">&lt;/h1&gt;</span>
+  <span class="c-tag">&lt;p&gt;</span>Я учусь веб-разработке<span class="c-tag">&lt;/p&gt;</span>
+  <span class="c-tag">&lt;button</span> <span class="c-attr">class</span>=<span class="c-str">"cta"</span><span class="c-tag">&gt;</span>
+    Смотреть работу
+  <span class="c-tag">&lt;/button&gt;</span>
+<span class="c-tag">&lt;/section&gt;</span>
+
+<span class="c-key">.hero</span> {
+  <span class="c-prop">display</span>: <span class="c-val">grid</span>;
+  <span class="c-prop">place-items</span>: <span class="c-val">center</span>;
+  <span class="c-prop">min-height</span>: <span class="c-val">100vh</span>;
+}</code></pre>
+              </div>
+              <div class="code-window__foot">
+                <span class="code-window__project"><i></i>Проект «Портфолио»</span>
+                <span class="code-window__progress"><span></span></span>
+                <span class="code-window__pct">72%</span>
+              </div>
+            </div>
+
+            <div class="float-card float-card--done">
+              <span class="float-card__icon float-card__icon--green" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>
+              </span>
+              <span class="float-card__text"><strong>Проект сдан</strong><span>Наставник проверил</span></span>
+            </div>
+
+            <div class="float-card float-card--mentor">
+              <span class="float-card__avatar">АК</span>
+              <span class="float-card__text"><strong>Анна К.</strong><span><i class="online-dot"></i>Наставник онлайн</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__stats reveal" data-delay="3">
+          <article class="stat">
+            <span class="stat__value">92<span class="stat__suffix">%</span></span>
+            <p class="stat__text">выпускников окупают стоимость курса ещё во время обучения</p>
+          </article>
+          <article class="stat">
+            <span class="stat__value">5</span>
+            <p class="stat__text">готовых сайтов в портфолио к концу обучения</p>
+          </article>
+          <article class="stat">
+            <span class="stat__value">4,9
+              <svg class="stat__star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9L12 2.6Z"></path></svg>
+            </span>
+            <p class="stat__text">средняя оценка курса по отзывам учеников</p>
+          </article>
+        </div>
+      </div>
+    </section>
+<section class="section" id="about">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Для кого</span>
+          <h2>Кому подойдёт обучение</h2>
+          <p>Курс рассчитан на тех, кто хочет освоить востребованную цифровую профессию с нуля — без математики, дипломов и опыта в IT.</p>
+        </header>
+
+        <div class="audience">
+          <article class="card audience-card reveal" data-delay="1">
+            <span class="audience-card__icon audience-card__icon--indigo" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09Z"></path>
+                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2Z"></path>
+                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+              </svg>
+            </span>
+            <h3 class="audience-card__title">Новичкам без опыта в IT</h3>
+            <p class="audience-card__text">Начинаем с самых основ: что такое браузер, как устроен сайт и как написать первую строку кода. Каждый шаг — с практикой и обратной связью.</p>
+            <ul class="tags" aria-label="Чему научитесь">
+              <li>HTML5</li><li>CSS3</li><li>JavaScript</li>
+            </ul>
+          </article>
+
+          <article class="card audience-card reveal" data-delay="2">
+            <span class="audience-card__icon audience-card__icon--cyan" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.58 4.09a2 2 0 0 0 1.66 0l8.58-4.09Z"></path>
+                <path d="M22 10v6"></path>
+                <path d="M6 12.5V16c0 1.66 2.69 3 6 3s6-1.34 6-3v-3.5"></path>
+              </svg>
+            </span>
+            <h3 class="audience-card__title">Школьникам и студентам</h3>
+            <p class="audience-card__text">Профессия, которая не мешает учёбе: занимайтесь по вечерам, берите заказы на выходных и создайте первое портфолио ещё до выпуска.</p>
+            <ul class="tags" aria-label="Чему научитесь">
+              <li>Адаптив</li><li>Портфолио</li><li>Фриланс</li>
+            </ul>
+          </article>
+
+          <article class="card audience-card reveal" data-delay="3">
+            <span class="audience-card__icon audience-card__icon--violet" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 17.5 9 11l4 4 8-8.5"></path>
+                <path d="M15.5 6.5H21V12"></path>
+                <path d="M3 21h18"></path>
+              </svg>
+            </span>
+            <h3 class="audience-card__title">Фрилансерам для повышения чека</h3>
+            <p class="audience-card__text">Добавьте в услуги разработку сайтов: научитесь собирать лендинги, вести клиента и защищать стоимость своей работы.</p>
+            <ul class="tags" aria-label="Чему научитесь">
+              <li>Лендинги</li><li>Клиенты</li><li>Высокий чек</li>
+            </ul>
+          </article>
+
+          <article class="card audience-card reveal" data-delay="4">
+            <span class="audience-card__icon audience-card__icon--teal" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9.5 4.7 4h14.6L21 9.5"></path>
+                <path d="M4 9.5v10a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-10"></path>
+                <path d="M9 20.5V14h6v6.5"></path>
+                <path d="M3 9.5a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"></path>
+              </svg>
+            </span>
+            <h3 class="audience-card__title">Предпринимателям для своих проектов</h3>
+            <p class="audience-card__text">Сделайте сайт для своего бизнеса и перестаньте зависеть от подрядчиков. Сможете быстро тестировать идеи и обновлять страницы сами.</p>
+            <ul class="tags" aria-label="Чему научитесь">
+              <li>Свой сайт</li><li>Вёрстка</li><li>Аналитика</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+<section class="section" id="program">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Программа курса</span>
+          <h2>5 модулей — от первого тега до первого заказа</h2>
+          <p>Двигаемся последовательно и сразу закрепляем теорию практикой. К концу курса у вас будет пять законченных проектов и понятный путь к клиентам.</p>
+        </header>
+
+        <div class="course-meta reveal" data-delay="1">
+          <span class="course-meta__item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.4 2"></path></svg>
+            3 месяца обучения
+          </span>
+          <span class="course-meta__item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15Z"></path><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20v3H6.5A2.5 2.5 0 0 1 4 20.5Z"></path></svg>
+            64 урока
+          </span>
+          <span class="course-meta__item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7.5A1.5 1.5 0 0 1 4.5 6h5l2 2.5h8A1.5 1.5 0 0 1 21 10v8.5a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18.5v-11Z"></path></svg>
+            5 проектов в портфолио
+          </span>
+        </div>
+
+        <div class="modules" data-accordion="single">
+          <article class="module is-open" data-acc-item>
+            <h3 class="module__heading">
+              <button class="module__trigger" type="button" data-acc-trigger aria-expanded="true" aria-controls="module-1" id="module-1-trigger">
+                <span class="module__num" aria-hidden="true">01</span>
+                <span class="module__titles">
+                  <span class="module__title">Основы HTML5 и семантика</span>
+                  <span class="module__meta"><span>12 уроков</span><span class="module__meta-sep" aria-hidden="true"></span><span>Проект: лендинг-визитка</span></span>
+                </span>
+                <span class="module__chevron" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+                </span>
+              </button>
+            </h3>
+            <div class="module__panel" id="module-1" role="region" aria-labelledby="module-1-trigger" aria-hidden="false">
+              <div class="module__panel-inner">
+                <div class="module__inner">
+                  <div>
+                    <p class="module__subtitle">Что разберём</p>
+                    <ul class="check-list">
+                      <li>Как устроен сайт и из чего состоит веб-страница</li>
+                      <li>Структура HTML-документа и подключение стилей</li>
+                      <li>Семантические теги: header, section, article, footer</li>
+                      <li>Тексты, списки, ссылки и изображения</li>
+                      <li>Формы и базовые поля ввода</li>
+                      <li>Доступность и аккуратная структура контента</li>
+                    </ul>
+                  </div>
+                  <div class="module__project">
+                    <span class="module__project-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7 3 12l5 5"></path><path d="m16 7 5 5-5 5"></path><path d="M13.5 5l-3 14"></path></svg>
+                    </span>
+                    <span class="module__project-label">Итоговый проект модуля</span>
+                    <strong class="module__project-title">Лендинг-визитка</strong>
+                    <p>Соберёте семантическую страницу-презентацию с формой связи и корректной структурой — фундамент первого кейса.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="module" data-acc-item>
+            <h3 class="module__heading">
+              <button class="module__trigger" type="button" data-acc-trigger aria-expanded="false" aria-controls="module-2" id="module-2-trigger">
+                <span class="module__num" aria-hidden="true">02</span>
+                <span class="module__titles">
+                  <span class="module__title">Современный CSS3, Flexbox и Grid</span>
+                  <span class="module__meta"><span>15 уроков</span><span class="module__meta-sep" aria-hidden="true"></span><span>Проект: адаптивный лендинг</span></span>
+                </span>
+                <span class="module__chevron" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+                </span>
+              </button>
+            </h3>
+            <div class="module__panel" id="module-2" role="region" aria-labelledby="module-2-trigger" aria-hidden="true">
+              <div class="module__panel-inner">
+                <div class="module__inner">
+                  <div>
+                    <p class="module__subtitle">Что разберём</p>
+                    <ul class="check-list">
+                      <li>Блочная модель, селекторы и каскад</li>
+                      <li>Flexbox: выравнивание и построение сеток</li>
+                      <li>CSS Grid: сложные раскладки без костылей</li>
+                      <li>CSS-переменные, типографика и цветовые системы</li>
+                      <li>Градиенты, тени, стекло и hover-эффекты</li>
+                      <li>Плавные анимации и переходы без библиотек</li>
+                    </ul>
+                  </div>
+                  <div class="module__project">
+                    <span class="module__project-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18M9 9v11"></path></svg>
+                    </span>
+                    <span class="module__project-label">Итоговый проект модуля</span>
+                    <strong class="module__project-title">Адаптивный лендинг</strong>
+                    <p>Свёрстаете современную страницу с сетками, акцентами и анимацией — как в макетах реальных заказчиков.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+<article class="module" data-acc-item>
+            <h3 class="module__heading">
+              <button class="module__trigger" type="button" data-acc-trigger aria-expanded="false" aria-controls="module-3" id="module-3-trigger">
+                <span class="module__num" aria-hidden="true">03</span>
+                <span class="module__titles">
+                  <span class="module__title">Адаптивность под мобильные устройства</span>
+                  <span class="module__meta"><span>10 уроков</span><span class="module__meta-sep" aria-hidden="true"></span><span>Проект: мультистраничный сайт</span></span>
+                </span>
+                <span class="module__chevron" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+                </span>
+              </button>
+            </h3>
+            <div class="module__panel" id="module-3" role="region" aria-labelledby="module-3-trigger" aria-hidden="true">
+              <div class="module__panel-inner">
+                <div class="module__inner">
+                  <div>
+                    <p class="module__subtitle">Что разберём</p>
+                    <ul class="check-list">
+                      <li>Mobile-first подход и точки перелома</li>
+                      <li>Media queries без хаоса в коде</li>
+                      <li>Адаптивная типографика и отступы</li>
+                      <li>Гибкие изображения и медиа-контент</li>
+                      <li>Выезжающее мобильное меню и touch-сценарии</li>
+                      <li>Проверка вёрстки на реальных устройствах</li>
+                    </ul>
+                  </div>
+                  <div class="module__project">
+                    <span class="module__project-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"></rect><path d="M11 18.5h2"></path></svg>
+                    </span>
+                    <span class="module__project-label">Итоговый проект модуля</span>
+                    <strong class="module__project-title">Мультистраничный сайт</strong>
+                    <p>Сделаете связку из трёх страниц, которая одинаково хорошо выглядит на смартфоне, планшете и большом мониторе.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="module" data-acc-item>
+            <h3 class="module__heading">
+              <button class="module__trigger" type="button" data-acc-trigger aria-expanded="false" aria-controls="module-4" id="module-4-trigger">
+                <span class="module__num" aria-hidden="true">04</span>
+                <span class="module__titles">
+                  <span class="module__title">Оживление сайтов на JavaScript</span>
+                  <span class="module__meta"><span>18 уроков</span><span class="module__meta-sep" aria-hidden="true"></span><span>Проект: интерактивный сайт</span></span>
+                </span>
+                <span class="module__chevron" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+                </span>
+              </button>
+            </h3>
+            <div class="module__panel" id="module-4" role="region" aria-labelledby="module-4-trigger" aria-hidden="true">
+              <div class="module__panel-inner">
+                <div class="module__inner">
+                  <div>
+                    <p class="module__subtitle">Что разберём</p>
+                    <ul class="check-list">
+                      <li>Переменные, функции, условия и массивы</li>
+                      <li>Поиск элементов и работа с DOM</li>
+                      <li>События, клики, формы и валидация</li>
+                      <li>Таймеры, аккордеоны, табы и слайдеры</li>
+                      <li>localStorage и сохранение пользовательских настроек</li>
+                      <li>Fetch API и работа с внешними данными</li>
+                    </ul>
+                  </div>
+                  <div class="module__project">
+                    <span class="module__project-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13H11l-1 9 8.5-11H12l1-9Z"></path></svg>
+                    </span>
+                    <span class="module__project-label">Итоговый проект модуля</span>
+                    <strong class="module__project-title">Интерактивный сайт</strong>
+                    <p>Добавите таймер, фильтры, модальные окна и проверку форм — тот самый уровень, который заказчики называют «живым сайтом».</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="module" data-acc-item>
+            <h3 class="module__heading">
+              <button class="module__trigger" type="button" data-acc-trigger aria-expanded="false" aria-controls="module-5" id="module-5-trigger">
+                <span class="module__num" aria-hidden="true">05</span>
+                <span class="module__titles">
+                  <span class="module__title">Выход на фриланс, упаковка портфолио и работа с клиентами</span>
+                  <span class="module__meta"><span>9 уроков</span><span class="module__meta-sep" aria-hidden="true"></span><span>Проект: портфолио и первая заявка</span></span>
+                </span>
+                <span class="module__chevron" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+                </span>
+              </button>
+            </h3>
+            <div class="module__panel" id="module-5" role="region" aria-labelledby="module-5-trigger" aria-hidden="true">
+              <div class="module__panel-inner">
+                <div class="module__inner">
+                  <div>
+                    <p class="module__subtitle">Что разберём</p>
+                    <ul class="check-list">
+                      <li>Упаковка кейсов: что показать и как описать результат</li>
+                      <li>Портфолио, резюме и профиль на биржах</li>
+                      <li>Где искать первых клиентов без бюджета</li>
+                      <li>Бриф, смета и переговоры о цене</li>
+                      <li>Договор, предоплата и безопасная работа</li>
+                      <li>Правки, сдача проекта и рекомендации</li>
+                    </ul>
+                  </div>
+                  <div class="module__project">
+                    <span class="module__project-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5A1.5 1.5 0 0 1 4.5 6h5l2 2.5h8A1.5 1.5 0 0 1 21 10v8.5a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18.5v-11Z"></path></svg>
+                    </span>
+                    <span class="module__project-label">Итоговый проект модуля</span>
+                    <strong class="module__project-title">Портфолио и первая заявка</strong>
+                    <p>Оформите пять работ в единое портфолио, подготовите самопрезентацию и отправите первое коммерческое предложение.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+<section class="section pricing" id="pricing" data-billing="full">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Тарифы</span>
+          <h2>Выберите формат обучения под свою цель</h2>
+          <p>Во всех тарифах — одна и та же программа и пять проектов. Разница в уровне сопровождения и доступе к материалам.</p>
+        </header>
+
+        <div class="pricing__toggle-wrap reveal" data-delay="1">
+          <div class="billing-toggle" role="group" aria-label="Формат оплаты">
+            <span class="billing-toggle__indicator" aria-hidden="true"></span>
+            <button class="billing-toggle__btn is-active" type="button" data-billing-btn="full" aria-pressed="true">
+              Оплата сразу <span class="billing-toggle__save">−20%</span>
+            </button>
+            <button class="billing-toggle__btn" type="button" data-billing-btn="installment" aria-pressed="false">
+              Рассрочка 12 мес <span class="billing-toggle__save">0%</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="tariffs">
+          <article class="card tariff reveal" data-delay="1" data-total="36000">
+            <header class="tariff__head">
+              <h3 class="tariff__name">Базовый</h3>
+              <p class="tariff__tagline">Самый доступный старт: программа, практика и поддержка куратора.</p>
+            </header>
+            <div class="price">
+              <div class="price__line">
+                <span class="price__value" data-price data-full="28800" data-month="3000" data-current="28800">28 800</span>
+                <span class="price__currency">₽</span>
+                <span class="price__period" data-price-period>за весь курс</span>
+              </div>
+              <div class="price__sub">
+                <span class="price__old" data-price-old>вместо 36 000 ₽</span>
+                <span class="price__badge" data-price-badge>выгода 20%</span>
+              </div>
+              <p class="price__note" data-price-note>Скидка 20% при полной оплате</p>
+            </div>
+            <ul class="tariff__features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>64 урока и 5 практических проектов</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Проверка ДЗ по подробным чек-листам</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Чат потока и поддержка куратора</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Доступ к материалам 6 месяцев</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Сертификат об окончании курса</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Гайд по упаковке первых кейсов</li>
+            </ul>
+            <button class="btn btn--outline btn--block tariff__btn" type="button" data-open-modal="tariff" data-plan="Базовый">Записаться на тариф</button>
+          </article>
+<article class="card tariff tariff--popular reveal" data-delay="2" data-total="60000">
+            <span class="tariff__hit">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6 2.8 13.2h5.5L9.6 21 21.2 9.4h-6.1l1.1-6.8H12Z"></path></svg>
+              Хит продаж
+            </span>
+            <header class="tariff__head">
+              <h3 class="tariff__name">Оптимальный</h3>
+              <p class="tariff__tagline">Баланс цены и сопровождения — выбор 7 из 10 учеников.</p>
+            </header>
+            <div class="price">
+              <div class="price__line">
+                <span class="price__value" data-price data-full="48000" data-month="5000" data-current="48000">48 000</span>
+                <span class="price__currency">₽</span>
+                <span class="price__period" data-price-period>за весь курс</span>
+              </div>
+              <div class="price__sub">
+                <span class="price__old" data-price-old>вместо 60 000 ₽</span>
+                <span class="price__badge" data-price-badge>выгода 20%</span>
+              </div>
+              <p class="price__note" data-price-note>Скидка 20% при полной оплате</p>
+            </div>
+            <ul class="tariff__features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Всё, что входит в «Базовый»</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Проверка домашних заданий наставником</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Код-ревью и разбор ошибок в вёрстке</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>3 живых групповых разбора в месяц</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Помощь с упаковкой портфолио</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Доступ к материалам 12 месяцев</li>
+            </ul>
+            <button class="btn btn--primary btn--block tariff__btn" type="button" data-open-modal="tariff" data-plan="Оптимальный">Записаться на тариф</button>
+          </article>
+
+          <article class="card tariff reveal" data-delay="3" data-total="96000">
+            <header class="tariff__head">
+              <h3 class="tariff__name">VIP с наставником</h3>
+              <p class="tariff__tagline">Личное сопровождение до первого оплаченного заказа.</p>
+            </header>
+            <div class="price">
+              <div class="price__line">
+                <span class="price__value" data-price data-full="76800" data-month="8000" data-current="76800">76 800</span>
+                <span class="price__currency">₽</span>
+                <span class="price__period" data-price-period>за весь курс</span>
+              </div>
+              <div class="price__sub">
+                <span class="price__old" data-price-old>вместо 96 000 ₽</span>
+                <span class="price__badge" data-price-badge>выгода 20%</span>
+              </div>
+              <p class="price__note" data-price-note>Скидка 20% при полной оплате</p>
+            </div>
+            <ul class="tariff__features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Всё, что входит в «Оптимальный»</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Личный наставник и 3 созвона в месяц</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Приоритетная проверка ДЗ за 24 часа</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Сопровождение до первого заказа</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Резюме и профиль на фриланс-бирже</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Доступ к материалам навсегда</li>
+            </ul>
+            <button class="btn btn--outline btn--block tariff__btn" type="button" data-open-modal="tariff" data-plan="VIP с наставником">Записаться на тариф</button>
+          </article>
+        </div>
+
+        <p class="pricing__note reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5.5c0 4.2-2.8 7.5-7 9.5-4.2-2-7-5.3-7-9.5V6l7-3Z"></path><path d="m9 12 2 2 4-4"></path></svg>
+          Рассрочка без процентов и переплат. Первый платёж — через месяц после старта обучения.
+        </p>
+      </div>
+    </section>
+<section class="section" id="reviews">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Истории учеников</span>
+          <h2>Отзывы выпускников</h2>
+          <p>Разные точки А, разный возраст — один результат: навык, портфолио и первый оплаченный проект.</p>
+        </header>
+
+        <div class="reviews">
+          <article class="card review reveal" data-delay="1">
+            <div class="review__top">
+              <span class="review__stars" aria-label="Оценка 5 из 5">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9L12 2.6Z"></path></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9L12 2.6Z"></path></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9L12 2.6Z"></path></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9L12 2.6Z"></path></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9L12 2.6Z"></path></svg>
+              </span>
+              <span class="review__time">заказ через 6 недель</span>
+            </div>
+            <blockquote class="review__quote">«Работала администратором и думала, что IT — не для меня. На курсе всё раскладывали по полочкам, а наставник не давал сдаться на первом проекте. Через полтора месяца собрала лендинг для мастера маникюра — это и был мой первый заказ».</blockquote>
+            <div class="review__result">
+              <div class="review__result-row"><span>Было</span><b>Администратор, 0 опыта в IT</b></div>
+              <div class="review__result-row"><span>Первый заказ</span><b class="review__money">12 000 ₽</b></div>
+              <div class="review__result-row"><span>Проект</span><b>Лендинг для мастера красоты</b></div>
+            </div>
+            <footer class="review__person">
+              <span class="review__avatar review__avatar--violet" aria-hidden="true">АК</span>
+              <span class="review__person-info"><strong class="review__name">Анна К.</strong><span class="review__age">24 года · Казань</span></span>
+            </footer>
+          </article>
+
+          <article class="card review reveal" data-delay="2">
+            <div class="review__top">
+              <span class="review__stars" aria-label="Оценка 5 из 5">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9L12 2.6Z"></path></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9L12 2.6Z"></path></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9L12 2.6Z"></path></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9L12 2.6Z"></path></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9L12 2.6Z"></path></svg>
+              </span>
+              <span class="review__time">заказ через 2 месяца</span>
+            </div>
+            <blockquote class="review__quote">«Записался на курс в 11 классе, чтобы не сидеть в играх. Родители помогли оплатить первый тариф, а дальше я уже сам. Сделал сайт-визитку для папы-электрика, потом взял ещё два заказа по знакомым. Сейчас коплю на ноутбук».</blockquote>
+            <div class="review__result">
+              <div class="review__result-row"><span>Было</span><b>Школьник, без целей на будущее</b></div>
+              <div class="review__result-row"><span>Первый заказ</span><b class="review__money">8 000 ₽</b></div>
+              <div class="review__result-row"><span>Проект</span><b>Сайт-визитка для электрика</b></div>
+            </div>
+            <footer class="review__person">
+              <span class="review__avatar review__avatar--cyan" aria-hidden="true">АМ</span>
+              <span class="review__person-info"><strong class="review__name">Артём М.</strong><span class="review__age">17 лет · Новосибирск</span></span>
+            </footer>
+          </article>
+
+          <article class="card review reveal" data-delay="3">
+            <div class="review__top">
+              <span class="review__stars" aria-label="Оценка 5 из 5">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9L12 2.6Z"></path></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9L12 2.6Z"></path></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9L12 2.6Z"></path></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9L12 2.6Z"></path></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9L12 2.6Z"></path></svg>
+              </span>
+              <span class="review__time">перешла в новую сферу</span>
+            </div>
+            <blockquote class="review__quote">«После двенадцати лет в бухгалтерии хотела сменить сферу, но боялась начинать с нуля. Училась по вечерам. Сайт для кофейни подруги стал моим первым большим проектом, а сейчас я беру заказы на постоянной основе и наконец работаю из дома».</blockquote>
+            <div class="review__result">
+              <div class="review__result-row"><span>Было</span><b>Бухгалтер, выгорание</b></div>
+              <div class="review__result-row"><span>Первый заказ</span><b class="review__money">35 000 ₽</b></div>
+              <div class="review__result-row"><span>Проект</span><b>Сайт-магазин для кофейни</b></div>
+            </div>
+            <footer class="review__person">
+              <span class="review__avatar review__avatar--teal" aria-hidden="true">МС</span>
+              <span class="review__person-info"><strong class="review__name">Марина С.</strong><span class="review__age">38 лет · Москва</span></span>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+<section class="section" id="faq">
+      <div class="container">
+        <div class="faq">
+          <aside class="faq__aside reveal">
+            <span class="eyebrow">FAQ</span>
+            <h2>Частые вопросы</h2>
+            <p class="faq__lead">Собрали то, о чём спрашивают чаще всего. Если не нашли свой вопрос — напишите нам, отвечаем быстро.</p>
+            <div class="faq__help">
+              <span class="faq__help-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.2 7.6L3 21l1.9-5.8A8.5 8.5 0 1 1 21 11.5Z"></path><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"></path></svg>
+              </span>
+              <div>
+                <h3>Не нашли свой вопрос?</h3>
+                <p>Напишите куратору в Telegram — ответим в течение 15 минут в рабочее время.</p>
+              </div>
+              <a class="btn btn--ghost btn--sm" href="https://t.me/koddesign_school" target="_blank" rel="noopener">
+                Написать куратору
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+              </a>
+            </div>
+          </aside>
+
+          <div class="faq__list" data-accordion="single">
+            <article class="faq-item" data-acc-item>
+              <h3 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" data-acc-trigger aria-expanded="true" aria-controls="faq-1" id="faq-1-trigger">
+                  <span>Нужен ли мощный компьютер для обучения?</span>
+                  <span class="faq-item__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>
+                  </span>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="faq-1" role="region" aria-labelledby="faq-1-trigger" aria-hidden="false">
+                <div class="faq-item__panel-inner">
+                  <p>Нет. Хватит любого ноутбука или стационарного компьютера, который уверенно работает в браузере. Мы используем VS Code, браузер и онлайн-редактор Figma — всё это не требует дорогого железа. Для комфортной работы достаточно 8 ГБ оперативной памяти.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="faq-item" data-acc-item>
+              <h3 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" data-acc-trigger aria-expanded="false" aria-controls="faq-2" id="faq-2-trigger">
+                  <span>Сколько часов в неделю нужно уделять обучению?</span>
+                  <span class="faq-item__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>
+                  </span>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="faq-2" role="region" aria-labelledby="faq-2-trigger" aria-hidden="true">
+                <div class="faq-item__panel-inner">
+                  <p>Комфортный темп — 8–10 часов в неделю: два занятия по 1,5 часа и 4–6 часов практики. Если на неделе загрузка выше, запись вебинаров и материалы остаются в личном кабинете — можно догнать поток. Минимальный порог для успешного прохождения — около 6 часов.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="faq-item" data-acc-item>
+              <h3 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" data-acc-trigger aria-expanded="false" aria-controls="faq-3" id="faq-3-trigger">
+                  <span>Выдаётся ли сертификат после обучения?</span>
+                  <span class="faq-item__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>
+                  </span>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="faq-3" role="region" aria-labelledby="faq-3-trigger" aria-hidden="true">
+                <div class="faq-item__panel-inner">
+                  <p>Да. После защиты финального проекта вы получаете электронный сертификат школы «Код &amp; Дизайн» с указанием программы и количества часов. Но главный результат курса — пять живых проектов в портфолио: работодатели и клиенты смотрят именно на них.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="faq-item" data-acc-item>
+              <h3 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" data-acc-trigger aria-expanded="false" aria-controls="faq-4" id="faq-4-trigger">
+                  <span>Как проходит проверка домашних заданий?</span>
+                  <span class="faq-item__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>
+                  </span>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="faq-4" role="region" aria-labelledby="faq-4-trigger" aria-hidden="true">
+                <div class="faq-item__panel-inner">
+                  <p>Вы отправляете ссылку на проект в личном кабинете, а наставник проверяет код и результат в течение 24–48 часов. Вы получаете комментарии по каждому пункту, разбор ошибок и рекомендации по улучшению. Сложные места дополнительно разбираем на живых созвонах — в тарифах «Оптимальный» и VIP.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+<section class="section" id="enroll">
+      <div class="container">
+        <div class="enroll reveal">
+          <div class="enroll__inner">
+            <div class="enroll__content">
+              <span class="eyebrow">Бесплатный урок</span>
+              <h2>Попробуйте обучение <span class="text-gradient">бесплатно</span></h2>
+              <p class="enroll__lead">60 минут живой практики с наставником: без оплаты, обязательств и скучных презентаций. Вы сами решите, подходит ли вам профессия.</p>
+
+              <ul class="enroll__features">
+                <li>
+                  <span class="enroll__feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>
+                  <span><strong>Сделаете первую секцию сайта</strong> своими руками прямо на уроке</span>
+                </li>
+                <li>
+                  <span class="enroll__feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>
+                  <span><strong>Получите разбор кода</strong> и рекомендации от практикующего наставника</span>
+                </li>
+                <li>
+                  <span class="enroll__feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>
+                  <span><strong>Узнаете свой план</strong> до первого заказа и реальные сроки</span>
+                </li>
+                <li>
+                  <span class="enroll__feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>
+                  <span><strong>Зададите любые вопросы</strong> про доход, фриланс и обучение</span>
+                </li>
+              </ul>
+
+              <div class="enroll__proof">
+                <div class="enroll__avatars" aria-hidden="true">
+                  <span>АК</span><span>АМ</span><span>МС</span><span>+1k</span>
+                </div>
+                <p><strong>1 200+ учеников</strong> уже прошли бесплатный урок и выбрали свой путь в digital.</p>
+              </div>
+            </div>
+
+            <div class="form-card">
+              <div class="form-card__head">
+                <h3>Записаться на бесплатный урок</h3>
+                <p>Заполните форму — куратор свяжется с вами в течение 15 минут.</p>
+              </div>
+
+              <form class="form" id="leadForm" novalidate>
+                <div class="form__row">
+                  <div class="field">
+                    <label for="lead-name">Имя</label>
+                    <input type="text" id="lead-name" name="name" placeholder="Как к вам обращаться?" autocomplete="name" data-validate="name" data-empty-msg="Введите ваше имя" required>
+                    <span class="field__error" aria-live="polite"></span>
+                  </div>
+                  <div class="field">
+                    <label for="lead-contact">Telegram или телефон</label>
+                    <input type="text" id="lead-contact" name="contact" placeholder="@username или +7 999 123-45-67" autocomplete="tel" data-validate="contact" data-empty-msg="Укажите Telegram или телефон" required>
+                    <span class="field__error" aria-live="polite"></span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="lead-goal">Цель обучения</label>
+                  <div class="select">
+                    <select id="lead-goal" name="goal" data-validate="select" data-empty-msg="Выберите цель обучения" required>
+                      <option value="" selected disabled>Выберите, что для вас важно</option>
+                      <option value="Сменить профессию">Начать с нуля и сменить профессию</option>
+                      <option value="Сайты для себя">Научиться делать сайты для себя</option>
+                      <option value="Фриланс и доход">Выйти на фриланс и увеличить доход</option>
+                      <option value="Сайт для бизнеса">Сделать сайт для своего бизнеса</option>
+                      <option value="Пока не определился">Пока не определился — хочу попробовать</option>
+                    </select>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+                  </div>
+                  <span class="field__error" aria-live="polite"></span>
+                </div>
+
+                <button class="btn btn--primary btn--block" type="submit">
+                  <span class="spinner" aria-hidden="true"></span>
+                  <span class="btn__text">Записаться на бесплатный урок</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+                </button>
+
+                <p class="form__note">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a> и обработкой персональных данных. Никакого спама — только по делу.</p>
+              </form>
+
+              <div class="form-success" data-form-success hidden>
+                <span class="form-success__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>
+                </span>
+                <h3>Заявка принята!</h3>
+                <p><span data-success-name>Спасибо</span>, мы получили вашу заявку на бесплатный урок и свяжемся с вами в течение 15 минут.</p>
+                <button class="btn btn--ghost btn--sm" type="button" data-form-reset>Отправить ещё одну заявку</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+<footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="logo" href="#top" aria-label="Код и Дизайн — на главную">
+            <span class="logo__mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8.5 8 4.5 12l4 4"></path>
+                <path d="m15.5 8 4 4-4 4"></path>
+                <path d="M13.5 6.5l-3 11"></path>
+              </svg>
+            </span>
+            <span class="logo__text">
+              <span class="logo__name">Код <span class="logo__amp">&amp;</span> Дизайн</span>
+              <span class="logo__tag">школа цифровых профессий</span>
+            </span>
+          </a>
+          <p>Помогаем осваивать веб-разработку с нуля и превращать навык в первые оплаченные проекты. Практика, наставники и честная обратная связь.</p>
+          <div class="socials" aria-label="Мы в соцсетях">
+            <a href="https://t.me/koddesign_school" target="_blank" rel="noopener" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 4.2 18.4 19c-.2 1-.9 1.3-1.8.8l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6 13.2 1.3 11.7c-1.1-.3-1.1-1 .2-1.5l19-7.3c.9-.3 1.6.2 1.1 1.3Z"></path></svg>
+            </a>
+            <a href="https://vk.com/koddesign_school" target="_blank" rel="noopener" aria-label="ВКонтакте">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.2 18c-5.6 0-8.9-3.9-9-10.3h2.8c.1 4.7 2.2 6.6 3.8 7V7.7h2.6v4c1.7-.2 3.4-2 4-4h2.7c-.5 2.5-2.2 4.3-3.4 5 1.2.6 3.2 2.1 3.9 5.3h-3c-.6-1.8-2.1-3.2-4.1-3.4V18h-.3Z"></path></svg>
+            </a>
+            <a href="https://youtube.com/@koddesign_school" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.5 7.2a2.8 2.8 0 0 0-2-2C18.8 4.7 12 4.7 12 4.7s-6.8 0-8.5.5a2.8 2.8 0 0 0-2 2A29.5 29.5 0 0 0 1 12a29.5 29.5 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.7.5 8.5.5 8.5.5s6.8 0 8.5-.5a2.8 2.8 0 0 0 2-2A29.5 29.5 0 0 0 23 12a29.5 29.5 0 0 0-.5-4.8ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>Обучение</h4>
+          <nav class="footer__links" aria-label="Разделы об обучении">
+            <a href="#about">О курсе</a>
+            <a href="#program">Программа</a>
+            <a href="#pricing">Тарифы</a>
+            <a href="#reviews">Отзывы</a>
+            <a href="#enroll">Бесплатный урок</a>
+          </nav>
+        </div>
+
+        <div class="footer__col">
+          <h4>Помощь</h4>
+          <nav class="footer__links" aria-label="Помощь и документы">
+            <a href="#faq">Частые вопросы</a>
+            <a href="#enroll">Связаться с нами</a>
+            <a href="#">Политика конфиденциальности</a>
+            <a href="#">Публичная оферта</a>
+          </nav>
+        </div>
+
+        <div class="footer__col">
+          <h4>Контакты</h4>
+          <ul class="footer__contacts">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>
+              <a href="mailto:hello@koddesign.ru">hello@koddesign.ru</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 3.5h2.7l1.4 4.1-2 1.4a13 13 0 0 0 6.3 6.3l1.4-2 4.1 1.4v2.7a2.6 2.6 0 0 1-2.8 2.6C10.4 19.4 4.6 13.6 4 6.3a2.6 2.6 0 0 1 2.6-2.8Z"></path></svg>
+              <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 4.2 18.4 19c-.2 1-.9 1.3-1.8.8l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6 13.2 1.3 11.7c-1.1-.3-1.1-1 .2-1.5l19-7.3c.9-.3 1.6.2 1.1 1.3Z"></path></svg>
+              <a href="https://t.me/koddesign_school" target="_blank" rel="noopener">@koddesign_school</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"></path></svg>
+              <span>Онлайн · по всей России</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© <span id="year">2026</span> «Код &amp; Дизайн». Все права защищены.</p>
+        <div class="footer__legal">
+          <a href="#">Политика конфиденциальности</a>
+          <a href="#">Оферта</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+<div class="modal" id="leadModal" aria-hidden="true">
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalSubtitle">
+      <button class="modal__close" type="button" data-modal-close aria-label="Закрыть окно">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+      </button>
+
+      <div class="modal__head" data-modal-head>
+        <span class="modal__eyebrow" id="modalEyebrow">Бесплатный урок</span>
+        <h2 class="modal__title" id="modalTitle">Начните с бесплатного урока</h2>
+        <p class="modal__subtitle" id="modalSubtitle">Оставьте контакты — куратор поможет выбрать формат и ответит на вопросы.</p>
+      </div>
+
+      <form class="form" id="modalForm" novalidate>
+        <div class="field">
+          <label for="modal-name">Имя</label>
+          <input type="text" id="modal-name" name="name" placeholder="Как к вам обращаться?" autocomplete="name" data-validate="name" data-empty-msg="Введите ваше имя" required>
+          <span class="field__error" aria-live="polite"></span>
+        </div>
+
+        <div class="field">
+          <label for="modal-contact">Telegram или телефон</label>
+          <input type="text" id="modal-contact" name="contact" placeholder="@username или +7 999 123-45-67" autocomplete="tel" data-validate="contact" data-empty-msg="Укажите Telegram или телефон" required>
+          <span class="field__error" aria-live="polite"></span>
+        </div>
+
+        <div class="field">
+          <label for="modal-goal">Цель обучения</label>
+          <div class="select">
+            <select id="modal-goal" name="goal" data-validate="select" data-empty-msg="Выберите цель обучения" required>
+              <option value="" selected disabled>Выберите, что для вас важно</option>
+              <option value="Сменить профессию">Начать с нуля и сменить профессию</option>
+              <option value="Сайты для себя">Научиться делать сайты для себя</option>
+              <option value="Фриланс и доход">Выйти на фриланс и увеличить доход</option>
+              <option value="Сайт для бизнеса">Сделать сайт для своего бизнеса</option>
+              <option value="Пока не определился">Пока не определился — хочу попробовать</option>
+            </select>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </div>
+          <span class="field__error" aria-live="polite"></span>
+        </div>
+
+        <div class="field" data-plan-field hidden>
+          <label for="modal-plan">Тариф</label>
+          <div class="select">
+            <select id="modal-plan" name="plan">
+              <option value="Базовый">Базовый — 28 800 ₽</option>
+              <option value="Оптимальный">Оптимальный — 48 000 ₽</option>
+              <option value="VIP с наставником">VIP с наставником — 76 800 ₽</option>
+            </select>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </div>
+        </div>
+
+        <button class="btn btn--primary btn--block" type="submit">
+          <span class="spinner" aria-hidden="true"></span>
+          <span class="btn__text">Отправить заявку</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </button>
+
+        <p class="form__note">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a> и обработкой персональных данных.</p>
+      </form>
+
+      <div class="form-success form-success--modal" data-modal-success hidden>
+        <span class="form-success__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>
+        </span>
+        <h3>Заявка отправлена!</h3>
+        <p>Куратор свяжется с вами в течение 15 минут, поможет с выбором тарифа и ответит на все вопросы.</p>
+        <button class="btn btn--primary btn--block" type="button" data-modal-close>Отлично, закрыть</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true">
+    <span class="toast__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>
+    </span>
+    <div class="toast__body">
+      <strong id="toastTitle">Заявка отправлена</strong>
+      <span id="toastText">Мы свяжемся с вами в течение 15 минут.</span>
+    </div>
+    <button class="toast__close" type="button" id="toastClose" aria-label="Закрыть уведомление">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+    </button>
+  </div>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Наверх">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"></path></svg>
+  </button>
+<script src="script.js"></script>
+</body>
+</html>
